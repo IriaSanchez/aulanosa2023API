@@ -1,7 +1,6 @@
 package es.aulanosa.gestionfp.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,10 +14,23 @@ import java.sql.Time;
 @NoArgsConstructor
 public class AsignaturaHorario {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+
+    @Column(name = "idAsignatura")
     private int idAsignatura;
+
+    @Column(name = "dia")
     private char dia;
-    private Time 
+
+    @Column(name = "inicio")
+    private Time inicio;
+
+    @Column(name = "fin")
+    private Time fin;
+
 
 
 }
